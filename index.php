@@ -11,13 +11,20 @@
     <title>Document</title>
 </head>
 
+<?php 
+    include_once('config/config.php');
+
+    include_once(DIR_BASE.'/include/header.php');
+?>
+
+
 <body>
 <!-- Barra de navegación -->
-    <?php include_once ('include/header.php') ?>
+    <?php include_once (DIR_BASE.'/include/header.php') ?>
      <!-- Banner -->
-    <?php include_once ('include/banner.php') ?>
+    <?php include_once (DIR_BASE.'/include/banner.php') ?>
     <!-- Barra de navecación2 -->
-    <?php include_once ('include/nav.php') ?>
+    <?php include_once (DIR_BASE.'/include/nav.php') ?>
     
 
     

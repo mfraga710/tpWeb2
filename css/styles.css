@@ -434,7 +434,7 @@ footer {
 .nav-menu-link {
     color: var(--dark-light);
     text-decoration: none;
-    display: block;
+    display: inline block;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -485,7 +485,7 @@ footer {
 }
 
 .nav-item {
-    display: block;
+    display: inline block;
     padding: 0.33333rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -535,7 +535,7 @@ footer {
 }
 
 .nav-item {
-    display: block;
+    display: inline block;
     padding: 0.33333rem;
     text-decoration: none;
     text-transform: uppercase;

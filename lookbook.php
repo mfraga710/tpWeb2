@@ -28,7 +28,7 @@
     <div class="container">
         <div class="columns is-mobile is-multiline">
             <div class="column is-half-mobile is-one-quarter-desktop">
-                <div class="card ">
+                <div class="card">
                     <span class="price"> <sup>REF</sup> M1</span>
                     <img src="img/item-1.png" alt="">
                     <div class="card-simple-options">
