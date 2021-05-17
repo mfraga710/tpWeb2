@@ -21,52 +21,7 @@
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
-				<div id="sidebar" class="span3">
-					<div class="well well-small"><a id="myCart" href="product_summary.php"><img src="themes/images/ico-cart.png" alt="cart">3 Items in your cart <span class="badge badge-warning pull-right">$155.00</span></a></div>
-					<ul id="sideManu" class="nav nav-tabs nav-stacked">
-						<li class="subMenu open"><a> ELECTRONICS [230]</a>
-							<ul>
-								<li><a class="active" href="products.php"><i class="icon-chevron-right"></i>Cameras (100) </a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Computers, Tablets & laptop (30)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Mobile Phone (80)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Sound & Vision (15)</a></li>
-							</ul>
-						</li>
-						<li class="subMenu"><a> CLOTHES [840] </a>
-							<ul style="display:none">
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Women's Clothing (45)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Women's Shoes (8)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Women's Hand Bags (5)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Men's Clothings (45)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Men's Shoes (6)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Kids Clothing (5)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Kids Shoes (3)</a></li>
-							</ul>
-						</li>
-						<li class="subMenu"><a>FOOD AND BEVERAGES [1000]</a>
-							<ul style="display:none">
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Angoves (35)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Bouchard Aine & Fils (8)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>French Rabbit (5)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Louis Bernard (45)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>BIB Wine (Bag in Box) (8)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Other Liquors & Wine (5)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Garden (3)</a></li>
-								<li><a href="products.php"><i class="icon-chevron-right"></i>Khao Shong (11)</a></li>
-							</ul>
-						</li>
-						<li><a href="products.php">HEALTH & BEAUTY [18]</a></li>
-						<li><a href="products.php">SPORTS & LEISURE [58]</a></li>
-						<li><a href="products.php">BOOKS & ENTERTAINMENTS [14]</a></li>
-					</ul>
-					
-					<div class="thumbnail">
-						<img src="themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
-						<div class="caption">
-							<h5>Payment Methods</h5>
-						</div>
-					</div>
-				</div>
+				<?php include_once (DIR_BASE. '/include/sidebar.php')?>
 				<!-- Sidebar end=============================================== -->
 				<div class="span9">
 					<ul class="breadcrumb">
@@ -98,6 +53,18 @@
 					<br class="clr" />
 					<div class="tab-content">
 						<div class="tab-pane" id="listView">
+
+							<!-- inicio codigo a iterar -->
+						<?php 
+						
+						$arrayProductos = json_decode(file_get_contents (DIR_BASE.'/datos/productos.json'),TRUE); // RUTA ABSOLUTA
+						//$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
+						//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
+						//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
+						
+						foreach($arrayProductos as $producto){ 
+						
+						?>
 							<div class="row">
 								<div class="span2">
 									<img src="themes/images/products/3.jpg" alt="" />
@@ -105,7 +72,7 @@
 								<div class="span4">
 									<h3>New | Available</h3>
 									<hr class="soft" />
-									<h5>Product Name </h5>
+									<h5>><?php echo $producto['nombre']?></h5>
 									<p>
 										Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
 										that is why our goods are so popular..
@@ -115,7 +82,7 @@
 								</div>
 								<div class="span3 alignR">
 									<form class="form-horizontal qtyFrm">
-										<h3> $140.00</h3>
+										<h3><?php echo $producto['precio']?></h3>
 										<label class="checkbox">
 											<input type="checkbox"> Adds product to compair
 										</label><br />
@@ -127,151 +94,9 @@
 								</div>
 							</div>
 							<hr class="soft" />
-							<div class="row">
-								<div class="span2">
-									<img src="themes/images/products/1.jpg" alt="" />
-								</div>
-								<div class="span4">
-									<h3>New | Available</h3>
-									<hr class="soft" />
-									<h5>Product Name </h5>
-									<p>
-										Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-										that is why our goods are so popular..
-									</p>
-									<a class="btn btn-small pull-right" href="product_details.php">View Details</a>
-									<br class="clr" />
-								</div>
-								<div class="span3 alignR">
-									<form class="form-horizontal qtyFrm">
-										<h3> $140.00</h3>
-										<label class="checkbox">
-											<input type="checkbox"> Adds product to compair
-										</label><br />
 
-										<a href="product_details.php" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-										<a href="product_details.php" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-
-									</form>
-								</div>
-							</div>
-							<hr class="soft" />
-							<div class="row">
-								<div class="span2">
-									<img src="themes/images/products/3.jpg" alt="" />
-								</div>
-								<div class="span4">
-									<h3>New | Available</h3>
-									<hr class="soft" />
-									<h5>Product Name </h5>
-									<p>
-										Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-										that is why our goods are so popular..
-									</p>
-									<a class="btn btn-small pull-right" href="product_details.php">View Details</a>
-									<br class="clr" />
-								</div>
-								<div class="span3 alignR">
-									<form class="form-horizontal qtyFrm">
-										<h3> $140.00</h3>
-										<label class="checkbox">
-											<input type="checkbox"> Adds product to compair
-										</label><br />
-
-										<a href="product_details.php" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-										<a href="product_details.php" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-
-									</form>
-								</div>
-							</div>
-							<hr class="soft" />
-							<div class="row">
-								<div class="span2">
-									<img src="themes/images/products/3.jpg" alt="" />
-								</div>
-								<div class="span4">
-									<h3>New | Available</h3>
-									<hr class="soft" />
-									<h5>Product Name </h5>
-									<p>
-										Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-										that is why our goods are so popular..
-									</p>
-									<a class="btn btn-small pull-right" href="product_details.php">View Details</a>
-									<br class="clr" />
-								</div>
-								<div class="span3 alignR">
-									<form class="form-horizontal qtyFrm">
-										<h3> $140.00</h3>
-										<label class="checkbox">
-											<input type="checkbox"> Adds product to compair
-										</label><br />
-
-										<a href="product_details.php" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-										<a href="product_details.php" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-
-									</form>
-								</div>
-							</div>
-
-							<hr class="soft" />
-							<div class="row">
-								<div class="span2">
-									<img src="themes/images/products/3.jpg" alt="" />
-								</div>
-								<div class="span4">
-									<h3>New | Available</h3>
-									<hr class="soft" />
-									<h5>Product Name </h5>
-									<p>
-										Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-										that is why our goods are so popular..
-									</p>
-									<a class="btn btn-small pull-right" href="product_details.php">View Details</a>
-									<br class="clr" />
-								</div>
-								<div class="span3 alignR">
-									<form class="form-horizontal qtyFrm">
-										<h3> $140.00</h3>
-										<label class="checkbox">
-											<input type="checkbox"> Adds product to compair
-										</label><br />
-										<a href="product_details.php" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-										<a href="product_details.php" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-									</form>
-								</div>
-							</div>
-							<hr class="soft" />
-							<div class="row">
-								<div class="span2">
-									<img src="themes/images/products/3.jpg" alt="" />
-								</div>
-								<div class="span4">
-									<h3>New | Available</h3>
-									<hr class="soft" />
-									<h5>Product Name </h5>
-									<p>
-										Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-										that is why our goods are so popular..
-									</p>
-									<a class="btn btn-small pull-right" href="product_details.php">View Details</a>
-									<br class="clr" />
-								</div>
-								<div class="span3 alignR">
-									<form class="form-horizontal qtyFrm">
-										<h3> $140.00</h3>
-										<label class="checkbox">
-											<input type="checkbox"> Adds product to compair
-										</label><br />
-
-										<a href="product_details.php" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-										<a href="product_details.php" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-
-									</form>
-								</div>
-							</div>
-							<hr class="soft" />
-						</div>
+							<?php } ?>
+							<!-- fin de codigo a iterar -->
 
 						<div class="tab-pane  active" id="blockView">
 							<ul class="thumbnails">
