@@ -1,3 +1,3 @@
 <?php 
-define('DIR_BASE','C:/xampp/htdocs/bootstrap-shop');
+define('DIR_BASE','C:\xampp\htdocs\tpWeb2');
 ?>
