@@ -43,7 +43,9 @@
 						</div>
 					</form>
 					<div id="myTab" class="pull-right">
+					
 						<a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
+						
 						<a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
 					</div>
 					<br class="clr" />
@@ -60,7 +62,7 @@
 									<p>
 										Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
 									</p>
-									<a class="btn btn-small pull-right" href="product_details.php">View Details</a>
+									<a class="btn btn-small pull-right " href="product_details.php">View Details</a>
 									<br class="clr" />
 								</div>
 								<div class="span3 alignR">
@@ -211,6 +213,18 @@
 
 						<div class="tab-pane  active" id="blockView">
 							<ul class="thumbnails">
+
+						<!-- ============================= inicio codigo a iterar-->
+						<?php
+
+							$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // RUTA ABSOLUTA
+							//$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
+							//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
+							//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
+
+							foreach ($arrayProductos as $producto) {
+
+								?>
 								<li class="span3">
 									<div class="thumbnail">
 										<a href="product_details.php"><img src="themes/images/products/b1.jpg" alt="" /></a>
@@ -223,102 +237,9 @@
 										</div>
 									</div>
 								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/b2.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
-										</div>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/b3.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
-										</div>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/b4.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
-										</div>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/9.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-										</div>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/4.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-										</div>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/6.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-										</div>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/7.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-										</div>
-									</div>
-								</li>
-								<li class="span3">
-									<div class="thumbnail">
-										<a href="product_details.php"><img src="themes/images/products/8.jpg" alt="" /></a>
-										<div class="caption">
-											<h5>Manicure &amp; Pedicure</h5>
-											<p>
-												Lorem Ipsum is simply dummy text.
-											</p>
-											<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-										</div>
-									</div>
-								</li>
+
+					<?php } ?>
+					
 							</ul>
 
 
