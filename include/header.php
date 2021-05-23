@@ -37,7 +37,7 @@
 					</form>
 					<ul id="topMenu" class="nav pull-right">
 						<li class=""><a href="special_offer.php">Specials Offer</a></li>
-						<li class=""><a href="normal.php">Delivery</a></li>
+						<!-- <li class=""><a href="normal.php">Delivery</a></li> -->
 						<li class=""><a href="contact.php">Contact</a></li>
 						<li class="">
 							<a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
