@@ -2,19 +2,19 @@
 $categorias = array (
     '1'=> array(
         'id'=> 1,
-        'nombre'=>'remeras',
+        'nombre'=>'Camaras',
         'activa'=> FALSE
 
     ),
     '2'=> array(
         'id'=> 2,
-        'nombre'=>'pantalones',
+        'nombre'=>'Celulares',
         'activa'=> TRUE
 
     ),
     '3'=> array(
         'id'=> 3,
-        'nombre'=>'buzos',
+        'nombre'=>'Memorias',
         'activa'=> FALSE
 
     ),

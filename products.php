@@ -14,7 +14,10 @@ include_once('config/config.php');
 <body>
 
 	<!-- Header====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/header.php') ?>
+	<?php 
+		include_once(DIR_BASE . '/include/header.php') ;
+		include_once(DIR_BASE . '/helpers/string.php');
+	?>
 	<!-- Header end====================================================================== -->
 
 	<div id="mainBody">
@@ -67,14 +70,14 @@ include_once('config/config.php');
 							?>
 								<div class="row">
 									<div class="span2">
-										<img src="themes/images/products/3.jpg" alt="" />
+										<img src="themes/images/products/<?php echo $producto['imagenS1']?>" alt="" />
 									</div>
 									<div class="span4">
 										<h3>New | Available</h3>
 										<hr class="soft" />
-										<h5><?php echo $producto['nombre'] ?></h5>
-										<p><?php echo $producto['descripcion'] ?></p>
-										<a class="btn btn-small pull-right" href="product_details.php">View Details</a>
+										<h5><?php echo $producto['nombre']?></h5>
+										<p><?php echo cortar_palabras($producto['descripcion'],100) ?></p>
+										<a class="btn btn-small pull-right" href="product_details.php?producto=<?php echo $producto['id']?>">View Details</a>
 										<br class="clr" />
 									</div>
 									<div class="span3 alignR">

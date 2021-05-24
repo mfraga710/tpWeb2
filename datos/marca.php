@@ -2,21 +2,21 @@
 $marca = array (
     '1'=> array(
         'id'=> 1,
-        'nombre'=>'Fashion Avenue',
+        'nombre'=>'Nikon',
         'producto'=> 1,
         'activa'=> TRUE
 
     ),
     '2'=> array(
         'id'=> 2,
-        'nombre'=>'Nike',
+        'nombre'=>'Fujifilm',
         'producto'=> 2,
         'activa'=> TRUE
 
     ),
     '3'=> array(
         'id'=> 3,
-        'nombre'=>'Caro Cuore',
+        'nombre'=>'Microsoft',
         'producto'=> 3,
         'activa'=> TRUE
 
