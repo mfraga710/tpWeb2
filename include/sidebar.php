@@ -9,7 +9,8 @@
 				foreach ($arrayCategoria as $categoria) {
 				?>			
 					<li><a class="active" href="products.php?categoria=<?php echo $categoria['id'] ?>"><i class="icon-chevron-right"></i><?php echo $categoria['nombre'] ?></a></li>							
-				<?php } ?>						
+				<?php } ?>
+				<li><a class="active" href="products.php?categoria="><i class="icon-chevron-right"></i>Todas</a></li>						
 			</ul>
 		</li>
 			
@@ -24,7 +25,8 @@
 				foreach ($arrayMarca as $marca) {
 				?>			
 					<li><a class="active" href="products.php?categoria=<?php echo $marca['id'] ?>"><i class="icon-chevron-right"></i><?php echo $marca['nombre'] ?></a></li>							
-				<?php } ?>						
+				<?php } ?>
+				<li><a class="active" href="products.php?categoria="><i class="icon-chevron-right"></i>Todas</a></li>						
 			</ul>
 		</li>
 			
