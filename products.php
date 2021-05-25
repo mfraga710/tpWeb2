@@ -117,7 +117,7 @@ include_once('config/config.php');
 												<a href="product_details.php"><img src="themes/images/products/3.jpg" alt="" /></a>
 												<div class="caption">
 													<h5><?php echo $producto['nombre'] ?></h5>
-													<p><?php echo $producto['descripcion'] ?></p>
+													<p><?php echo cortar_palabras($producto['descripcion'],100) ?></p>
 													<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#"><?php echo $producto['precio'] ?></a></h4>
 												</div>
 											</div>
