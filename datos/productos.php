@@ -44,8 +44,8 @@ $productos = array (
                         Ancho x Profundidad x Altura: 118.3 mm x 68.2 mm x 116 mm
                         Peso: 307 g',
         'categoria'=> 1,
-        'imagenL'=> 'fuji_azul_160x160.jpg',
-        'imagenS1'=> 'fuji_azul_500x375.jpg',
+        'imagenL'=> 'fuji_azul_500x375.jpg',
+        'imagenS1'=> 'fuji_azul_160x160.jpg',
         'imagenS2'=> 'fuji_azul_160x160.jpg',
         'imagenS3'=> 'fuji_azul_160x160.jpg',
         'comentarios'=> 1,
@@ -111,10 +111,10 @@ $productos = array (
                           Ancho x Profundidad x Altura: 167.8 mm x 94.7 mm x 120.9 mm
                           Peso: 612 g',        
         'categoria'=> 1,
-        'imagenL'=> '16.jpg',
-        'imagenS1'=> '17.jpg',
-        'imagenS2'=> '17.jpg',
-        'imagenS3'=> '17.jpg',
+        'imagenL'=> '17.jpg',
+        'imagenS1'=> '16.jpg',
+        'imagenS2'=> '16.jpg',
+        'imagenS3'=> '16.jpg',
         'comentarios'=> 1,
         'activa'=> TRUE
 

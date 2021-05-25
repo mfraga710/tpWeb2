@@ -14,6 +14,7 @@ include_once('config/config.php');
 <body>
 	<!-- Header====================================================================== -->
 	<?php include_once(DIR_BASE . '/include/header.php') ?>
+	<?php include_once(DIR_BASE . '/helpers/string.php') ?>
 	<!-- Header end================================================================== -->
 
 	<div id="carouselBlk">
@@ -84,7 +85,7 @@ include_once('config/config.php');
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
-				<?php include_once (DIR_BASE. '/include/sidebar.php')?>
+				<?php include_once(DIR_BASE . '/include/sidebar.php') ?>
 				<!-- Sidebar end=============================================== -->
 				<div class="span9">
 					<div class="well well-small">
@@ -266,43 +267,31 @@ include_once('config/config.php');
 					</div>
 					<h4>Latest Products </h4>
 					<ul class="thumbnails">
-					<!-- ============================= inicio codigo a iterar-->
-					<?php
+						<!-- ============================= inicio codigo a iterar-->
+						<?php
 
-									$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // RUTA ABSOLUTA
-									//$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
-									//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
-									//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
+						$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // RUTA ABSOLUTA
+						//$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
+						//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
+						//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
 
-									foreach ($arrayProductos as $producto) {
+						foreach ($arrayProductos as $producto) {
 
-									?>
-				
+						?>
+							<li class="span3">
+								<div class="thumbnail">
+									<a href="product_details.php?producto=<?php echo $producto['id']?>"><img src="themes/images/products/<?php echo $producto['imagenS1']?>" alt="" /></a>
+									<div class="caption">
+										<h5><?php echo $producto['nombre']?></h5>
+										<p><?php echo cortar_palabras($producto['descripcion'],100) ?></p>
 
-
-						<li class="span3">
-							<div class="thumbnail">
-								<a href="product_details.php"><img src="themes/images/products/6.jpg" alt="" /></a>
-								<div class="caption">
-									<h5>Product name</h5>
-									<p>
-										Lorem Ipsum is simply dummy text.
-									</p>
-
-									<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+										<h4 style="text-align:center"><a class="btn" href="product_details.php"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#"><?php echo $producto['precio'] ?>$</a></h4>
+									</div>
 								</div>
-							</div>
-						</li>
-						
-<?php } ?>
+							</li>
 
-
-
-
-
-
+						<?php } ?>
 					</ul>
-
 				</div>
 			</div>
 		</div>
