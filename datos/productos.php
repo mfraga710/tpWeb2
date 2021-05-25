@@ -149,10 +149,10 @@ $productos = array (
                         Velocidad de lectura: 80 MB/s
                         Incluye adaptador SD: Sí',        
         'categoria'=> 3,
-        'imagenL'=> '18.jpg',
-        'imagenS1'=> '19.jpg',
-        'imagenS2'=> '19.jpg',
-        'imagenS3'=> '19.jpg',
+        'imagenL'=> '19.jpg',
+        'imagenS1'=> '18.jpg',
+        'imagenS2'=> '18.jpg',
+        'imagenS3'=> '18.jpg',
         'comentarios'=> 1,
         'activa'=> TRUE
 
@@ -165,12 +165,13 @@ $productos = array (
         'precio'=> 89000,
         'descripcion'=> 'Tipo de cámara: DSLR
                          Tamaño de la pantalla: 3 "
-                         Resolución: 16.3 Mpx',        
+                         Resolución: 16.3 Mpx
+                         pantalla 100% articulable',        
         'categoria'=> 2,
-        'imagenL'=> '20.jpg',
-        'imagenS1'=> '21.jpg',
-        'imagenS2'=> '21.jpg',
-        'imagenS3'=> '21.jpg',
+        'imagenL'=> '21.jpg',
+        'imagenS1'=> '20.jpg',
+        'imagenS2'=> '20.jpg',
+        'imagenS3'=> '20.jpg',
         'comentarios'=> 1,
         'activa'=> TRUE
 
@@ -183,7 +184,8 @@ $productos = array (
         'precio'=> 89000,
         'descripcion'=> 'Capacidad: 2 GB
                          Formato de la tarjeta: xD-Picture
-                         Incluye adaptador SD: No',        
+                         Incluye adaptador SD: No
+                         capacidades de hasta 256GB3,',        
         'categoria'=> 3,
         'imagenL'=> '22.jpg',
         'imagenS1'=> '22.jpg',

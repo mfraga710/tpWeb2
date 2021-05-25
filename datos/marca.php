@@ -16,9 +16,15 @@ $marca = array (
     ),
     '3'=> array(
         'id'=> 3,
-        'nombre'=>'Microsoft',
+        'nombre'=>'Sandisk',
         'producto'=> 3,
         'activa'=> TRUE
+
+    ),
+    '4'=> array(
+        'id'=> 4,
+        'nombre'=>'Todos',
+        'activa'=> FALSE
 
     ),
 );

@@ -8,13 +8,13 @@ $categorias = array (
     ),
     '2'=> array(
         'id'=> 2,
-        'nombre'=>'Celulares',
-        'activa'=> TRUE
+        'nombre'=>'Memorias',
+        'activa'=> FALSE
 
     ),
     '3'=> array(
         'id'=> 3,
-        'nombre'=>'Memorias',
+        'nombre'=>'Todos',
         'activa'=> FALSE
 
     ),
