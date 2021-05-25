@@ -12,12 +12,6 @@ $categorias = array (
         'activa'=> FALSE
 
     ),
-    '3'=> array(
-        'id'=> 3,
-        'nombre'=>'Todos',
-        'activa'=> FALSE
-
-    ),
 );
 
 echo json_encode($categorias);

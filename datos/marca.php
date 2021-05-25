@@ -21,12 +21,6 @@ $marca = array (
         'activa'=> TRUE
 
     ),
-    '4'=> array(
-        'id'=> 4,
-        'nombre'=>'Todos',
-        'activa'=> FALSE
-
-    ),
 );
 
 echo json_encode($marca);
