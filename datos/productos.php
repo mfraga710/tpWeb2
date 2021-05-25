@@ -62,7 +62,7 @@ $productos = array (
                          Resolución máxima de vídeo: Full HD
                         Velocidad de lectura: 80 MB/s
                         Incluye adaptador SD: Sí',
-        'categoria'=> 3,    
+        'categoria'=> 2,    
         'imagenL'=> '10.jpg',
         'imagenS1'=> '10.jpg',
         'imagenS2'=> '10.jpg',
@@ -73,7 +73,7 @@ $productos = array (
     ),
     '4'=> array(
         'id'=> 4,
-        'nombre'=>'Cámara compacta',
+        'nombre'=>'Nikon XXX',
         'marca'=> 1,
         'precio'=> 8000,
         'descripcion'=> 'Resolución de 16 Mpx f/3-6.5.
@@ -98,7 +98,7 @@ $productos = array (
     ),    
     '5'=> array(
         'id'=> 5,
-        'nombre'=>'Cámara sin espejo',
+        'nombre'=>'Fujifilm XXC',
         'marca'=> 2,
         'precio'=> 7000,
         'descripcion'=> 'Tipo de cámara: Sin espejo
@@ -121,7 +121,7 @@ $productos = array (
     ),    
     '6'=> array(
         'id'=> 6,
-        'nombre'=>'Tarjeta de memoria 16g',
+        'nombre'=>'Sandisk XXX',
         'marca'=> 3,
         'precio'=> 300,
         'descripcion'=> 'Capacidad: 32 GB
@@ -129,7 +129,7 @@ $productos = array (
                         Resolución máxima de vídeo: Full HD
                         Velocidad de lectura: 80 MB/s
                         Incluye adaptador SD: Sí',        
-        'categoria'=> 3,
+        'categoria'=> 2,
         'imagenL'=> '8.jpg',
         'imagenS1'=> '8.jpg',
         'imagenS2'=> '8.jpg',
@@ -140,7 +140,7 @@ $productos = array (
     ),
     '7'=> array(
         'id'=> 7,
-        'nombre'=>'Camara digital',
+        'nombre'=>'Nikon',
         'marca'=> 1,
         'precio'=> 30000,
         'descripcion'=> 'Capacidad: 32 GB
@@ -148,7 +148,7 @@ $productos = array (
                         Resolución máxima de vídeo: Full HD
                         Velocidad de lectura: 80 MB/s
                         Incluye adaptador SD: Sí',        
-        'categoria'=> 3,
+        'categoria'=> 1,
         'imagenL'=> '19.jpg',
         'imagenS1'=> '18.jpg',
         'imagenS2'=> '18.jpg',
@@ -160,14 +160,14 @@ $productos = array (
     
     '8'=> array(
         'id'=> 8,
-        'nombre'=>'Camara compacta',
-        'marca'=> 1,
+        'nombre'=>'Fujifilm VVV',
+        'marca'=> 2,
         'precio'=> 89000,
         'descripcion'=> 'Tipo de cámara: DSLR
                          Tamaño de la pantalla: 3 "
                          Resolución: 16.3 Mpx
                          pantalla 100% articulable',        
-        'categoria'=> 2,
+        'categoria'=> 1,
         'imagenL'=> '21.jpg',
         'imagenS1'=> '20.jpg',
         'imagenS2'=> '20.jpg',
@@ -179,14 +179,14 @@ $productos = array (
 
     '9'=> array(
         'id'=> 9,
-        'nombre'=>'Tarjeta de memoria',
+        'nombre'=>'Tarjeta de memoria Fujifilm',
         'marca'=> 2,
         'precio'=> 89000,
         'descripcion'=> 'Capacidad: 2 GB
                          Formato de la tarjeta: xD-Picture
                          Incluye adaptador SD: No
                          capacidades de hasta 256GB3,',        
-        'categoria'=> 3,
+        'categoria'=> 2,
         'imagenL'=> '22.jpg',
         'imagenS1'=> '22.jpg',
         'imagenS2'=> '22.jpg',
@@ -198,14 +198,14 @@ $productos = array (
 
     '10'=> array(
         'id'=> 10,
-        'nombre'=>'Tarjeta de memoria',
+        'nombre'=>'Tarjeta de memoria Nikon',
         'marca'=> 1,
         'precio'=> 89000,
         'descripcion'=> 'Capacidad: 64GB
                          Formato de la tarjeta: xD-Picture
                          Incluye adaptador SD: No
                          Nikon D50 D40 D40X D3300 Tarjeta de memoria para camara digital',        
-        'categoria'=> 3,
+        'categoria'=> 2,
         'imagenL'=> '23.jpg',
         'imagenS1'=> '23.jpg',
         'imagenS2'=> '23.jpg',

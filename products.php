@@ -64,7 +64,14 @@ include_once('config/config.php');
 							//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
 
 							foreach ($arrayProductos as $producto) {
-
+								$print = true;
+								if(!empty($_GET['categoria']) AND $print){
+									if($producto['categoria'] != $_GET['categoria']) $print = FALSE;	
+								}
+								if(!empty($_GET['marca']) AND $print){
+									if($producto['marca'] != $_GET['marca']) $print = FALSE;	
+								}
+								if($print){
 							?>
 								<div class="row">
 									<div class="span2">
@@ -93,7 +100,8 @@ include_once('config/config.php');
 								</div>
 								<hr class="soft" />
 
-							<?php } ?>
+							<?php } 
+							} ?>
 							<!-- fin de codigo a iterar -->
 						</div>							
 
