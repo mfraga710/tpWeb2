@@ -22,7 +22,6 @@ $productos = array (
         'imagenS1'=> '1s1.jpg',
         'imagenS2'=> '1s2.jpg',
         'imagenS3'=> '1s3.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
@@ -48,7 +47,6 @@ $productos = array (
         'imagenS1'=> 'fuji_azul_160x160.jpg',
         'imagenS2'=> 'fuji_azul_160x160.jpg',
         'imagenS3'=> 'fuji_azul_160x160.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
@@ -67,7 +65,6 @@ $productos = array (
         'imagenS1'=> '10.jpg',
         'imagenS2'=> '10.jpg',
         'imagenS3'=> '10.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
@@ -92,7 +89,6 @@ $productos = array (
         'imagenS1'=> '15.jpg',
         'imagenS2'=> '15.jpg',
         'imagenS3'=> '15.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),    
@@ -115,7 +111,6 @@ $productos = array (
         'imagenS1'=> '16.jpg',
         'imagenS2'=> '16.jpg',
         'imagenS3'=> '16.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),    
@@ -134,7 +129,6 @@ $productos = array (
         'imagenS1'=> '8.jpg',
         'imagenS2'=> '8.jpg',
         'imagenS3'=> '8.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
@@ -153,7 +147,6 @@ $productos = array (
         'imagenS1'=> '18.jpg',
         'imagenS2'=> '18.jpg',
         'imagenS3'=> '18.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
@@ -172,7 +165,6 @@ $productos = array (
         'imagenS1'=> '20.jpg',
         'imagenS2'=> '20.jpg',
         'imagenS3'=> '20.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
@@ -191,7 +183,6 @@ $productos = array (
         'imagenS1'=> '22.jpg',
         'imagenS2'=> '22.jpg',
         'imagenS3'=> '22.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
@@ -210,7 +201,6 @@ $productos = array (
         'imagenS1'=> '23.jpg',
         'imagenS2'=> '23.jpg',
         'imagenS3'=> '23.jpg',
-        'comentarios'=> 1,
         'activa'=> TRUE
 
     ),
