@@ -7,15 +7,33 @@ include_once('config/config.php');
 
 <head>
 	<!-- Head====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/head.php') ?>
+	<?php include_once(DIR_BASE . '/include/head.php');
+	include_once('DAO/comentarios.php');
+	include_once('DAO/productos.php'); ?>
 	<!-- Head====================================================================== -->
 </head>
 
 <body>
 
 	<!-- Header====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/header.php') ?>
+	<?php include_once(DIR_BASE . '/include/header.php');
+		  
+
+
+					
+		  if(isset($_POST['submitCom'])){ 
+			guardarComentario($_POST);
+		};
+
+
+	?>
 	<!-- Header end====================================================================== -->
+
+
+
+				
+
+
 
 	<div id="mainBody">
 		<div class="container">
@@ -83,12 +101,37 @@ include_once('config/config.php');
 							<a href="#" name="detail"></a>
 							<hr class="soft" />
 						</div>
+						<form name="comentario" method="POST">
+					Nombre: <input name="nombre" type="text" ><br>
+					Email: <input name="email" type="text" ><br>
+					Comentarios:<br>
+					<textarea name="comentario"></textarea><br>
+					<input type="submit" name="submitCom" value="Enviar">
+					<input type="hidden" name="producto" value="<?php echo $producto['id']?>"   ><br>
+				</form>
 
-					</div>
+				<?php 
+						$comentario = obtenerComentarios();
+						krsort($comentario);
+
+						foreach( $comentario as $c){
+							if($producto['id'] == $c['producto']){
+								echo $c['nombre'].':'.$c['comentario'].'<br />';
+							}
+						}
+
+				?>
+			
+
+
 				</div>
+					</div>
 			</div>
 		</div>
 	</div>
+
+	
+
 	<!-- MainBody End ============================= -->
 	<!-- footer&scr====================================================================== -->
 	<?php include_once(DIR_BASE . '/include/footer&scr.php') ?>
