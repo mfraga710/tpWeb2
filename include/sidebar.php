@@ -8,10 +8,10 @@
 				$arrayCategoria = json_decode(file_get_contents(DIR_BASE . '/datos/categoria.json'), TRUE); // RUTA ABSOLUTA
 				foreach ($arrayCategoria as $categoria) {
 				?>			
-					<li><a class="active" href="products.php?categoria=<?php echo $categoria['id'] ?>">
+					<li><a class="active" href="products.php?categoria=<?php echo $categoria['id'] ?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>">
 					<i class="icon-chevron-right"></i><?php echo $categoria['nombre'] ?></a></li>							
 				<?php } ?>
-				<li><a class="active" href="products.php?categoria="><i class="icon-chevron-right"></i>Todas</a></li>						
+				<li><a class="active" href="products.php?categoria=&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>"><i class="icon-chevron-right"></i>Todas</a></li>						
 			</ul>
 		</li>
 			
@@ -25,10 +25,10 @@
 				$arrayMarca = json_decode(file_get_contents(DIR_BASE . '/datos/marca.json'), TRUE); // RUTA ABSOLUTA
 				foreach ($arrayMarca as $marca) {
 				?>			
-					<li><a class="active" href="products.php?marca=<?php echo $marca['id'] ?>">
+					<li><a class="active" href="products.php?marca=<?php echo $marca['id'] ?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">
 					<i class="icon-chevron-right"></i><?php echo $marca['nombre'] ?></a></li>							
 				<?php } ?>
-				<li><a class="active" href="products.php?marca="><i class="icon-chevron-right"></i>Todas</a></li>						
+				<li><a class="active" href="products.php?marca=&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>"><i class="icon-chevron-right"></i>Todas</a></li>						
 			</ul>
 		</li>
 			
