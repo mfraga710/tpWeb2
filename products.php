@@ -24,7 +24,20 @@ include_once('config/config.php');
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
-				<?php include_once(DIR_BASE . '/include/sidebar.php') ?>
+				<?php include_once(DIR_BASE . '/include/sidebar.php');
+				//include_once('Business/productosBusiness.php');
+			//	include_once('Business/categoriasBusiness.php');
+			//	include_once('Business/marcasBusiness.php');
+				
+			//	$marcas = businessObtenerMarcas();
+	//$categorias = businessObtenerCategorias();
+
+
+		//if(isset($_GET['del'])){
+   			//	 businessBorrarProducto($_GET['del']);
+    			//	redirect('productosListado.php');
+			//	}
+				?>
 				<!-- Sidebar end=============================================== -->
 				<div class="span9">
 					<ul class="breadcrumb">
@@ -92,8 +105,8 @@ include_once('config/config.php');
 												<input type="checkbox"> Adds product to compair
 											</label><br />
 
-											<a href="product_details.php" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-											<a href="product_details.php" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+											<a href="product_details.php?producto=<?php echo $producto['id']?>" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
+											<a href="product_details.php?producto=<?php echo $producto['id']?>" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 
 										</form>
 									</div>
@@ -111,8 +124,9 @@ include_once('config/config.php');
 									<?php
 
 									$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // RUTA ABSOLUTA
-									//$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
-									//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
+								
+									//	$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
+								//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
 									//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
 
 									foreach ($arrayProductos as $producto) {
@@ -135,7 +149,7 @@ include_once('config/config.php');
 						</div>
 
 
-						<a href="compair.php" class="btn btn-large pull-right">Compair Product</a>
+					<!--	<a href="compair.php" class="btn btn-large pull-right">Compair Product</a>-->
 						<div class="pagination">
 							<ul>
 								<li><a href="#">&lsaquo;</a></li>

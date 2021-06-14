@@ -1,7 +1,7 @@
 <?php
 
-function guardarComentario($datos = array()){
-    $comentarios = obtenerComentarios(); 
+function daoGuardarComentario($datos = array()){
+    $comentarios = daoObtenerComentarios(); 
     
     $comentarios[date('Ymdhisu')] = array(
         'nombre' => $datos['nombre'],
@@ -16,7 +16,7 @@ function guardarComentario($datos = array()){
 
 }
 
-function obtenerComentarios(){
+function daoObtenerComentarios(){
     if(file_exists('datos/comentarios.json')){ 
         $comentarios = json_decode(file_get_contents('datos/comentarios.json'),TRUE);	
     }else{
@@ -27,28 +27,28 @@ function obtenerComentarios(){
 
 }
 
-function obtenerComentario($id){
-    $comentarios = obtenerComentarios();  
+function daoObtenerComentario($id){
+    $comentarios = daoObtenerComentarios();  
     return $comentarios[$id];
 
 }
 
-function modificarComentario($datos = array(), $id){
-    $comentarios = obtenerComentarios(); 
+function daoModificarComentario($datos = array(), $id){
+    $comentarios = daoObtenerComentarios(); 
     $comentarios[$id] = array(
         'nombre' => $datos['nombre'],
         'comentario' => $datos['comentario'],
         'email' => $datos['email'],
         'producto' => $datos['producto'],
-        'fecha' => date('H:i:s d-m-Y')
+        'fecha' => $datos['fecha']
     );
     $fp = fopen('datos/comentarios.json','w');
     fwrite($fp, json_encode($comentarios));
     fclose($fp);
 }
 
-function borrarComentario($id){
-    $comentarios = obtenerComentarios(); 
+function daoBorrarComentario($id){
+    $comentarios = daoObtenerComentarios(); 
     unset($comentarios[$id]);
     $fp = fopen('datos/comentarios.json','w');
     fwrite($fp, json_encode($comentarios));

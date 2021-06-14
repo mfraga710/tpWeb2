@@ -8,8 +8,8 @@ include_once('config/config.php');
 <head>
 	<!-- Head====================================================================== -->
 	<?php include_once(DIR_BASE . '/include/head.php');
-	include_once('DAO/comentarios.php');
-	include_once('DAO/productos.php'); ?>
+	include_once('Business/comentariosBusiness.php');
+	include_once('Business/productosBusiness.php'); ?>
 	<!-- Head====================================================================== -->
 </head>
 
@@ -22,7 +22,8 @@ include_once('config/config.php');
 
 					
 		  if(isset($_POST['submitCom'])){ 
-			guardarComentario($_POST);
+			businessGuardarComentario($_POST);
+			
 		};
 
 
@@ -39,12 +40,14 @@ include_once('config/config.php');
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
-				<?php include_once(DIR_BASE . '/include/sidebar.php') ?>
+				<?php include_once(DIR_BASE . '/include/sidebar.php')
+				 ?>
 				<!-- Sidebar end=============================================== -->
 
 				<?php
-				$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // TRAIGO EL ARRAY DE PRODUCTO
-				$producto = $arrayProductos[$_GET['producto']];	//GUARDO EL ARRAY QUE ME TRAIGO DE producto.php
+				$producto = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // TRAIGO EL ARRAY DE PRODUCTO
+			//	$producto = $arrayProductos[$_GET['producto']];
+				$producto = businessObtenerProducto($_GET['producto']);	//GUARDO EL ARRAY QUE ME TRAIGO DE producto.php
 				//var_dump($producto);
 				?>
 
@@ -88,7 +91,7 @@ include_once('config/config.php');
 									<label class="control-label"><span><?php echo $producto['precio'] ?>$</span></label>
 									<div class="controls">
 										<input type="number" class="span1" placeholder="Qty." />
-										<button type="submit" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
+										<button type="button" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
 									</div>
 								</div>
 							</form>
@@ -101,7 +104,7 @@ include_once('config/config.php');
 							<a href="#" name="detail"></a>
 							<hr class="soft" />
 						</div>
-						<form name="comentario" method="POST">
+						<form name="comentario" method="POST" action="" enctype="">
 					Nombre: <input name="nombre" type="text" ><br>
 					Email: <input name="email" type="text" ><br>
 					Comentarios:<br>
@@ -111,7 +114,7 @@ include_once('config/config.php');
 				</form>
 
 				<?php 
-						$comentario = obtenerComentarios();
+						$comentario =  businessObtenerComentarios();
 						krsort($comentario);
 
 						foreach( $comentario as $c){
