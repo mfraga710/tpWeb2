@@ -3,20 +3,21 @@
 
 <?php
 include_once('config/config.php');
-?>
+include_once('include/head.php');
+include_once('Business/comentariosBusiness.php');
+include_once('Business/productosBusiness.php');?>
+
 
 <head>
 	<!-- Head====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/head.php');
-	include_once('Business/comentariosBusiness.php');
-	include_once('Business/productosBusiness.php'); ?>
+	
 	<!-- Head====================================================================== -->
 </head>
 
 <body>
 
 	<!-- Header====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/header.php');
+	<?php include_once('include/header.php');
 		  
 
 
@@ -24,32 +25,32 @@ include_once('config/config.php');
 		  if(isset($_POST['submitCom'])){ 
 			businessGuardarComentario($_POST);
 			
-		};
+		}
 
 
 	?>
 	<!-- Header end====================================================================== -->
 
-
-
-				
-
-
-
 	<div id="mainBody">
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
-				<?php include_once(DIR_BASE . '/include/sidebar.php')
+				<?php include_once('include/sidebar.php');
+				
+			//	$producto = businessObtenerProducto($_GET['producto']);	//GUARDO EL ARRAY QUE ME TRAIGO DE producto.php
+
+				$arrayProductos = json_decode(file_get_contents(DIR_BASE.'datos/productos.json'),TRUE);
+				//echo "<script>console.log('" . json_encode($arrayProductos) . "');</script>";
+				//$jsonProductos = file_get_contents(DIR_BASE.'datos/productos.json');	
+				$producto = $arrayProductos[$_GET['producto']];
 				 ?>
 				<!-- Sidebar end=============================================== -->
-
-				<?php
-				$producto = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // TRAIGO EL ARRAY DE PRODUCTO
-			//	$producto = $arrayProductos[$_GET['producto']];
-				$producto = businessObtenerProducto($_GET['producto']);	//GUARDO EL ARRAY QUE ME TRAIGO DE producto.php
+			<!--	
+			//	$producto = json_decode(file_get_contents(DIR_BASE.'datos/productos.json'), TRUE); // TRAIGO EL ARRAY DE PRODUCTO
+				
+				
 				//var_dump($producto);
-				?>
+			//	-->
 
 				<div class="span9">
 					<ul class="breadcrumb">
@@ -64,8 +65,26 @@ include_once('config/config.php');
 							</a>
 							<div id="differentview" class="moreOptopm carousel slide">
 								<div class="carousel-inner">
-									<div class="item active">
-										<a href="themes/images/products/<?php echo $producto['imagenS1'] ?>"> <img style="width:29%" src="themes/images/products/<?php echo $producto['imagenS1'] ?>" alt="" /></a>
+									
+									<?php $imagenes = businessObtenerImagenesProducto($producto['id']) ; 
+					if(!empty($imagenes)){
+						$active = 'active';
+						foreach($imagenes as $img){?>
+							<div class="item <?php echo $active; $active = '';?>">
+								<img src="<?php echo str_replace('small','xl',$img)?>" alt="">
+							</div>
+						<?php } ?>
+					<?php }else{ ?>
+						<div class="item active">
+							<img src="<?php echo URL_BASE?>themes/images/products/1l.jpg" alt="">
+						</div>	
+					<?php } ?> 
+
+
+
+									
+										<div class="item active">
+											<a href="themes/images/products/<?php echo $producto['imagenS1'] ?>"> <img style="width:29%" src="themes/images/products/<?php echo $producto['imagenS1'] ?>" alt="" /></a>
 										<a href="themes/images/products/<?php echo $producto['imagenS2'] ?>"> <img style="width:29%" src="themes/images/products/<?php echo $producto['imagenS2'] ?>" alt="" /></a>
 										<a href="themes/images/products/<?php echo $producto['imagenS3'] ?>"> <img style="width:29%" src="themes/images/products/<?php echo $producto['imagenS3'] ?>" alt="" /></a>
 									</div>
@@ -137,7 +156,7 @@ include_once('config/config.php');
 
 	<!-- MainBody End ============================= -->
 	<!-- footer&scr====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/footer&scr.php') ?>
+	<?php include_once('include/footer&scr.php'); ?>
 	<!-- footer&scr end================================================================== -->
 </body>
 
