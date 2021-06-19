@@ -27,7 +27,7 @@ $productos = array (
     ),
     '2'=> array(
         'id'=> 2,
-        'nombre'=>'Fujifilm Instax Mini 9',
+        'nombre'=>'fuji_azul_160x160',
         'marca'=> 2,
         'precio'=> 10500,
         'descripcion'=> 'Cámara instantánea,
@@ -107,8 +107,8 @@ $productos = array (
                           Ancho x Profundidad x Altura: 167.8 mm x 94.7 mm x 120.9 mm
                           Peso: 612 g',        
         'categoria'=> 1,
-        'imagenL'=> '17.jpg',
-        'imagenS1'=> '16.jpg',
+        'imagenL'=> '16.jpg',
+        'imagenS1'=> '17.jpg',
         'imagenS2'=> '16.jpg',
         'imagenS3'=> '16.jpg',
         'activa'=> TRUE
@@ -143,8 +143,8 @@ $productos = array (
                         Velocidad de lectura: 80 MB/s
                         Incluye adaptador SD: Sí',        
         'categoria'=> 1,
-        'imagenL'=> '19.jpg',
-        'imagenS1'=> '18.jpg',
+        'imagenL'=> '18.jpg',
+        'imagenS1'=> '19.jpg',
         'imagenS2'=> '18.jpg',
         'imagenS3'=> '18.jpg',
         'activa'=> TRUE
@@ -161,8 +161,8 @@ $productos = array (
                          Resolución: 16.3 Mpx
                          pantalla 100% articulable',        
         'categoria'=> 1,
-        'imagenL'=> '21.jpg',
-        'imagenS1'=> '20.jpg',
+        'imagenL'=> '20.jpg',
+        'imagenS1'=> '21.jpg',
         'imagenS2'=> '20.jpg',
         'imagenS3'=> '20.jpg',
         'activa'=> TRUE

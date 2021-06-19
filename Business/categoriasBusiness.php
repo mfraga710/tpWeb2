@@ -1,5 +1,5 @@
 <?php
-include_once('DAO/categoriasDao.php');
+include_once(DIR_BASE.'DAO/categoriasDao.php');
 
  
 function businessObtenerCategorias(){
@@ -7,3 +7,4 @@ function businessObtenerCategorias(){
     return daoObtenerCategorias();
 
 }
+?>

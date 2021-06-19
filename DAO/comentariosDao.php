@@ -10,15 +10,15 @@ function daoGuardarComentario($datos = array()){
         'producto' => $datos['producto'],
         'fecha' => date('H:i:s d-m-Y')
     ); 
-    $fp = fopen('datos/comentarios.json','w');
+    $fp = fopen(DIR_BASE.'datos/comentarios.json','w');
     fwrite($fp, json_encode($comentarios));
     fclose($fp);
 
 }
 
 function daoObtenerComentarios(){
-    if(file_exists('datos/comentarios.json')){ 
-        $comentarios = json_decode(file_get_contents('datos/comentarios.json'),TRUE);	
+    if(file_exists(DIR_BASE.'datos/comentarios.json')){ 
+        $comentarios = json_decode(file_get_contents(DIR_BASE.'datos/comentarios.json'),TRUE);	
     }else{
         $comentarios = array();
     }
@@ -33,7 +33,7 @@ function daoObtenerComentario($id){
 
 }
 
-function daoModificarComentario($datos = array(), $id){
+function daoModificarComentario($datos , $id){
     $comentarios = daoObtenerComentarios(); 
     $comentarios[$id] = array(
         'nombre' => $datos['nombre'],
@@ -42,7 +42,7 @@ function daoModificarComentario($datos = array(), $id){
         'producto' => $datos['producto'],
         'fecha' => $datos['fecha']
     );
-    $fp = fopen('datos/comentarios.json','w');
+    $fp = fopen(DIR_BASE.'datos/comentarios.json','w');
     fwrite($fp, json_encode($comentarios));
     fclose($fp);
 }
@@ -50,7 +50,8 @@ function daoModificarComentario($datos = array(), $id){
 function daoBorrarComentario($id){
     $comentarios = daoObtenerComentarios(); 
     unset($comentarios[$id]);
-    $fp = fopen('datos/comentarios.json','w');
+    $fp = fopen(DIR_BASE.'datos/comentarios.json','w');
     fwrite($fp, json_encode($comentarios));
     fclose($fp);
 }
+?>

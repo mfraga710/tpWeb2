@@ -4,14 +4,14 @@ $marca = array (
         'id'=> 1,
         'nombre'=>'Nikon',
         'producto'=> 1,
-        'activa'=> TRUE
+        'activa'=> FALSE
 
     ),
     '2'=> array(
         'id'=> 2,
         'nombre'=>'Fujifilm',
         'producto'=> 2,
-        'activa'=> TRUE
+        'activa'=> FALSE
 
     ),
     '3'=> array(

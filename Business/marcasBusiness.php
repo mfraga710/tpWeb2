@@ -1,5 +1,5 @@
 <?php
-include_once('DAO/marcasDao.php');
+include_once(DIR_BASE.'DAO/marcasDao.php');
 
  
 function businessObtenerMarcas(){
@@ -7,3 +7,4 @@ function businessObtenerMarcas(){
     return daoObtenerMarcas();
 
 }
+?>

@@ -7,14 +7,14 @@
 
 <head>
 	<!-- Head====================================================================== -->
-	<?php include_once (DIR_BASE. '/include/head.php')?>
+	<?php include_once (DIR_BASE. 'include/head.php');?>
 	<!-- Head====================================================================== -->	
 </head>
 
 <body>
 
 	<!-- Header====================================================================== -->
-	<?php include_once (DIR_BASE. '/include/header.php')?>
+	<?php include_once (DIR_BASE. 'include/header.php');?>
 	<!-- Header end====================================================================== -->	
 
 	<div id="mainBody">
@@ -83,7 +83,7 @@
 	</div>
 	<!-- MainBody End ============================= -->
 	<!-- footer&scr====================================================================== -->
-	<?php include_once (DIR_BASE. '/include/footer&scr.php')?>
+	<?php include_once (DIR_BASE. 'include/footer&scr.php');?>
 	<!-- footer&scr end================================================================== -->	
 </body>
 

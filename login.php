@@ -7,21 +7,21 @@
 
 <head>
 	<!-- Head====================================================================== -->
-	<?php include_once (DIR_BASE. '/include/head.php')?>
+	<?php include_once (DIR_BASE. 'include/head.php');?>
 	<!-- Head====================================================================== -->	
 </head>
 
 <body>
 
 	<!-- Header====================================================================== -->
-	<?php include_once (DIR_BASE. '/include/header.php')?>
+	<?php include_once (DIR_BASE. 'include/header.php');?>
 	<!-- Header end====================================================================== -->	
 
 	<div id="mainBody">
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
-				<?php include_once (DIR_BASE. '/include/sidebar.php')?>
+				<?php include_once (DIR_BASE. 'include/sidebar.php');?>
 				<!-- Sidebar end=============================================== -->
 				<div class="span9">
 					<ul class="breadcrumb">
@@ -82,7 +82,7 @@
 	</div>
 	<!-- MainBody End ============================= -->
 	<!-- footer&scr====================================================================== -->
-	<?php include_once (DIR_BASE. '/include/footer&scr.php')?>
+	<?php include_once (DIR_BASE. 'include/footer&scr.php')?>
 	<!-- footer&scr end================================================================== -->	
 </body>
 

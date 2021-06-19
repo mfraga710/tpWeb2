@@ -1,6 +1,6 @@
 <?php
 
-include_once('DAO/comentariosDao.php');
+include_once(DIR_BASE.'DAO/comentariosDao.php');
 
 
 function businessGuardarComentario($datos = array()){
@@ -16,7 +16,7 @@ function businessObtenerComentario($id){
 
 }
 
-function businessModificarComentario($datos = array(), $id){
+function businessModificarComentario($datos , $id){
     daoModificarComentario($datos, $id);
 }
 

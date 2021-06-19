@@ -14,7 +14,22 @@
     <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
 </head>
 <?php 
-    include_once ('../config/config.php');
+    include_once('config/config.php');
+    include_once(DIR_BASE.'Business/productosBusiness.php');
+    include_once(DIR_BASE.'Business/categoriasBusiness.php');
+    include_once(DIR_BASE.'Business/marcasBusiness.php');
+
+    $marcas = businessObtenerMarcas();
+$categorias = businessObtenerCategorias();
+
+
+if(isset($_GET['del'])){
+    businessBorrarProducto($_GET['del']);
+    redirect('productosListado.php');
+}
+
+    
+    
 ?>
 <body>
     <!-- ============================================================== -->
@@ -56,7 +71,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Productos</a></li>
+                                        <li class="breadcrumb-item"><a href="productosForm.php" class="breadcrumb-link">Productos</a></li>
                                     </ol>
                                 </nav>
                             </div>
@@ -73,37 +88,38 @@
 
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">                                       
                 <div class="card">
-                    <h5 class="card-header text-center">Producto</h5>
-                    <a href="#" class="btn btn-primary btn-block">Agregar Producto</a> 
+                    <h5 class="card-header text-center">Productos</h5>
+                   <!--  <a href="#" class="btn btn-primary btn-block">Agregar Producto</a> -->
                     <div class="card-body">
                         <table class="table table-hover text-center">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Nombre</th>
+                                    <th scope="col">Categoría</th>
+                                    <th scope="col">Marca</th>
                                     <th scope="col">Precio($)</th>
-                                    <th scope="col">Cambios</th>
+                                    <th scope="col">Activo</th>
+                                    <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Producto 1</td>
-                                    <td>125 </td>
-                                    <td><a href="#" class="btn btn-success">Editar</a><a href="#" class="btn btn-danger">Borrar</a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Producto 2</td>
-                                    <td>300</td>
-                                    <td><a href="#" class="btn btn-success">Editar</a><a href="#" class="btn btn-danger">Borrar</a></td>                                    
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Producto 3</td>
-                                    <td>8000</td>
-                                    <td><a href="#" class="btn btn-success">Editar</a><a href="#" class="btn btn-danger">Borrar</a></td>                                    
-                                </tr>
+                            <?php foreach(businessObtenerProductos() as $prod){ ?>
+                        <tr>
+                            <td><?php echo $prod['id'] ?></td>
+                            <td><?php echo $prod['nombre'] ?></td>
+                            <td><?php echo $categorias[$prod['categoria']]['nombre'] ?></td>
+                            <td><?php echo $marcas[$prod['marca']]['nombre'] ?></td>
+                            <td><?php echo $prod['precio'] ?></td>
+                            <td><?php echo $prod['activa']?'SI':'NO' ?></td>
+                            <td>
+                            <a href="productosForm.php?edit=<?php echo $prod['id']?>"> <i class="btn btn-primary">Agregar</i></a>
+                            <a href="productosListado.php?del=<?php echo $prod['id']?>"><i class="btn btn-danger"></i>Borrar</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                             
+                                
                             </tbody>
                         </table>
                     </div>
@@ -114,40 +130,15 @@
             <!-- end hoverable table -->
             <!-- ============================================================== -->            
             <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <div class="footer fixed-bottom">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <div class="text-md-right footer-links d-none d-sm-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- end footer -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- end main wrapper -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- end main wrapper -->
-    <!-- ============================================================== -->
-    <!-- Optional JavaScript -->
-    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="assets/libs/js/main-js.js"></script>
+           
+
+            <?php
+
+include_once('include/footer.php'); 
+
+?>
+
+
 </body>
  
 </html>

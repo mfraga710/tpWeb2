@@ -3,21 +3,24 @@
 
 <?php
 include_once('config/config.php');
+$seccion = 'home';
+
 ?>
 
 <head>
 	<!-- Head====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/head.php') ?>
+	<?php include_once('include/head.php'); ?>
 	<!-- Head====================================================================== -->
 </head>
 
 <body>
 	<!-- Header====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/header.php') ?>
-	<?php include_once(DIR_BASE . '/helpers/string.php') ?>
+	<?php include_once('include/header.php'); ?>
+	
+	<?php include_once('helpers/string.php'); ?>
 	<!-- Header end================================================================== -->
 
-	<div id="carouselBlk">
+	<!--<div id="carouselBlk">
 		<div id="myCarousel" class="carousel slide">
 			<div class="carousel-inner">
 				<div class="item active">
@@ -80,14 +83,14 @@ include_once('config/config.php');
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 			<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 		</div>
-	</div>
+	</div> -->
 	<div id="mainBody">
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
-				<?php include_once(DIR_BASE . '/include/sidebar.php') ?>
+				<?php include_once('include/sidebar.php'); ?>
 				<!-- Sidebar end=============================================== -->
-				<div class="span9">
+			<!-- 	<div class="span9">
 					<div class="well well-small">
 						<h4>Featured Products <small class="pull-right">200+ featured products</small></h4>
 						<div class="row-fluid">
@@ -98,7 +101,7 @@ include_once('config/config.php');
 											<li class="span3">
 												<div class="thumbnail">
 													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/b1.jpg" alt=""></a>
+													<a href="product_details.php"><img src="themes/images/products/1L.jpg" alt=""></a>
 													<div class="caption">
 														<h5>Product name</h5>
 														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -108,7 +111,7 @@ include_once('config/config.php');
 											<li class="span3">
 												<div class="thumbnail">
 													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/b2.jpg" alt=""></a>
+													<a href="product_details.php"><img src="themes/images/products/1s1.jpg" alt=""></a>
 													<div class="caption">
 														<h5>Product name</h5>
 														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -118,7 +121,7 @@ include_once('config/config.php');
 											<li class="span3">
 												<div class="thumbnail">
 													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/b3.jpg" alt=""></a>
+													<a href="product_details.php"><img src="themes/images/products/1s2.jpg" alt=""></a>
 													<div class="caption">
 														<h5>Product name</h5>
 														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -128,7 +131,7 @@ include_once('config/config.php');
 											<li class="span3">
 												<div class="thumbnail">
 													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/b4.jpg" alt=""></a>
+													<a href="product_details.php"><img src="themes/images/products/1s3.jpg" alt=""></a>
 													<div class="caption">
 														<h5>Product name</h5>
 														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -210,7 +213,7 @@ include_once('config/config.php');
 											</li>
 											<li class="span3">
 												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/1.jpg" alt=""></a>
+													<a href="product_details.php"><img src="themes/images/products/12.jpg" alt=""></a>
 													<div class="caption">
 														<h5>Product name</h5>
 														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -266,11 +269,11 @@ include_once('config/config.php');
 						</div>
 					</div>
 					<h4>Latest Products </h4>
-					<ul class="thumbnails">
+					<ul class="thumbnails">-->
 						<!-- ============================= inicio codigo a iterar-->
 						<?php
 
-						$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // RUTA ABSOLUTA
+						$arrayProductos = json_decode(file_get_contents('datos/productos.json'), TRUE); // RUTA ABSOLUTA
 						//$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
 						//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
 						//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
@@ -298,7 +301,7 @@ include_once('config/config.php');
 	</div>
 	<!-- MainBody End ============================= -->
 	<!-- footer&scr====================================================================== -->
-	<?php include_once(DIR_BASE . '/include/footer&scr.php') ?>
+	<?php include_once('include/footer&scr.php'); ?>
 	<!-- footer&scr end================================================================== -->
 
 </body>

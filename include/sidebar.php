@@ -5,7 +5,7 @@
 			<ul>					
 		<!-- inicio codigo a iterar -->
 				<?php
-				$arrayCategoria = json_decode(file_get_contents(DIR_BASE . '/datos/categoria.json'), TRUE); // RUTA ABSOLUTA
+				$arrayCategoria = json_decode(file_get_contents(DIR_BASE . 'datos/categoria.json'), TRUE); // RUTA ABSOLUTA
 				foreach ($arrayCategoria as $categoria) {
 				?>			
 					<li><a class="active" href="products.php?categoria=<?php echo $categoria['id'] ?>&marca=<?php echo (isset($_GET['marca']))?$_GET['marca']:""; ?>">
@@ -22,7 +22,7 @@
 			<ul>					
 		<!-- inicio codigo a iterar -->
 				<?php
-				$arrayMarca = json_decode(file_get_contents(DIR_BASE . '/datos/marca.json'), TRUE); // RUTA ABSOLUTA
+				$arrayMarca = json_decode(file_get_contents(DIR_BASE . 'datos/marca.json'), TRUE); // RUTA ABSOLUTA
 				foreach ($arrayMarca as $marca) {
 				?>			
 					<li><a class="active" href="products.php?marca=<?php echo $marca['id'] ?>&categoria=<?php echo (isset($_GET['categoria']))?$_GET['categoria']:""; ?>">

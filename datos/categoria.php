@@ -9,7 +9,7 @@ $categorias = array (
     '2'=> array(
         'id'=> 2,
         'nombre'=>'Memorias',
-        'activa'=> FALSE
+        'activa'=> TRUE
 
     ),
 );

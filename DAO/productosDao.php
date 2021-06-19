@@ -13,14 +13,14 @@ function daoGuardarProducto($datos = array()){
         'descripcion' => $datos['descripcion'],
         'imagen' => $datos['imagen']
     ); 
-    file_put_contents('datos/productos.json',json_encode($productos));
+    file_put_contents(DIR_BASE.'datos/productos.json',json_encode($productos));
     return $id;
 
 }
 
 function daoObtenerProductos(){
-    if(file_exists('datos/productos.json')){ 
-        $productos = json_decode(file_get_contents('datos/productos.json'),TRUE);	
+    if(file_exists(DIR_BASE.'datos/productos.json')){ 
+        $productos = json_decode(file_get_contents(DIR_BASE.'datos/productos.json'),TRUE);	
     }else{
         $productos = array();
     }
@@ -35,7 +35,7 @@ function daoObtenerProducto($id){
 
 }
 
-function daoModificarProducto($datos = array(), $id){
+function daoModificarProducto($datos, $id){
     $productos = daoObtenerProductos();
     $productos[$id] = array(
        'id' => $id,
@@ -47,7 +47,7 @@ function daoModificarProducto($datos = array(), $id){
        'descripcion' => $datos['descripcion'],
        'imagen' => $datos['imagen']
    ); 
-   file_put_contents('datos/productos.json',json_encode($productos));
+   file_put_contents(DIR_BASE.'datos/productos.json',json_encode($productos));
 }
 
 function daoBorrarProducto($id){
@@ -58,7 +58,8 @@ function daoBorrarProducto($id){
             fwrite($fp, json_encode($productos));
             fclose($fp);
         */
-        file_put_contents('datos/productos.json',json_encode($productos));
+        file_put_contents(DIR_BASE.'datos/productos.json',json_encode($productos));
      }
      
 }
+?>
