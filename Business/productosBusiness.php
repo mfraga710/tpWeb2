@@ -39,7 +39,7 @@ function businessModificarProducto($datos ,$id){
 }
 
 function saveImage($datos,$id){ 
-        $ruta = DIR_BASE.'images/'.$id.'/';
+        $ruta = DIR_BASE.'themes/images/products/'.$id.'/';
         if(!is_dir($ruta)){
             mkdir($ruta);
         }
@@ -64,12 +64,14 @@ function saveImage($datos,$id){
 }
 
 function businessObtenerImagenesProducto($id){
-    return obtener_imagenes('images/'.$id.'/');
+    return obtener_imagenes('themes/images/products/'.$id.'/');
 } 
 
 function businessBorrarProducto($id){
+    
     daoBorrarProducto($id);
-    $ruta = DIR_BASE.'images/'.$id.'/';
+    $ruta = DIR_BASE.'themes/images/products/'.$id.'/';
     eliminar_archivos($ruta);
+
 }
 ?>

@@ -136,4 +136,3 @@ function cant_imagenes($dir){
 }
 ?>
 
-?>

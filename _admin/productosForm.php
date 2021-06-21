@@ -14,7 +14,13 @@
     <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
 </head>
 <?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
     include_once('config/config.php');
+    include_once(DIR_BASE.'helpers/urls.php');
+    include_once(DIR_BASE.'helpers/image.php');
+    
     include_once(DIR_BASE.'Business/productosBusiness.php');
     include_once(DIR_BASE.'Business/categoriasBusiness.php');
     include_once(DIR_BASE.'Business/marcasBusiness.php');
@@ -133,10 +139,14 @@
                         <input type="file" name="imagen[]" multiple class="custom-file-input" id="exampleInputFile">  
                         <!--<input type="hidden" name="old_imagen" value="<?php //echo $producto['imagen'] ?>" class="custom-file-input" id="exampleInputFile">-->
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        
                       </div> 
                     </div>
                   </div>
+                  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                 </div>
+                </form>
+                
 
             <!-- ============================================================== -->
             <!-- end hoverable table -->

@@ -15,21 +15,19 @@
 </head>
 <?php 
     include_once('config/config.php');
+    include_once(DIR_BASE.'helpers/urls.php');
+    include_once(DIR_BASE.'helpers/image.php');
     include_once(DIR_BASE.'Business/productosBusiness.php');
     include_once(DIR_BASE.'Business/categoriasBusiness.php');
     include_once(DIR_BASE.'Business/marcasBusiness.php');
 
     $marcas = businessObtenerMarcas();
-$categorias = businessObtenerCategorias();
+    $categorias = businessObtenerCategorias();
 
-
-if(isset($_GET['del'])){
+    if(isset($_GET['del'])){
     businessBorrarProducto($_GET['del']);
     redirect('productosListado.php');
 }
-
-    
-    
 ?>
 <body>
     <!-- ============================================================== -->
@@ -89,7 +87,7 @@ if(isset($_GET['del'])){
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">                                       
                 <div class="card">
                     <h5 class="card-header text-center">Productos</h5>
-                   <!--  <a href="#" class="btn btn-primary btn-block">Agregar Producto</a> -->
+                    <a href="productosForm.php?edit=" class="btn btn-primary btn-block">Agregar Producto</a> 
                     <div class="card-body">
                         <table class="table table-hover text-center">
                             <thead>
@@ -114,7 +112,7 @@ if(isset($_GET['del'])){
                             <td><?php echo $prod['activa']?'SI':'NO' ?></td>
                             <td>
                             <a href="productosForm.php?edit=<?php echo $prod['id']?>"> <i class="btn btn-primary">Agregar</i></a>
-                            <a href="productosListado.php?del=<?php echo $prod['id']?>"><i class="btn btn-danger"></i>Borrar</a>
+                            <a href="productosListado.php?del=<?php echo $prod['id']?>"><i class="btn btn-danger">Borrar</i></a>
                             </td>
                         </tr>
                     <?php } ?>
