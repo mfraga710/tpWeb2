@@ -5,12 +5,12 @@
 include_once('config/config.php');
 include_once('include/head.php');
 include_once('Business/comentariosBusiness.php');
-include_once('Business/productosBusiness.php');?>
+include_once('Business/productosBusiness.php'); ?>
 
 
 <head>
 	<!-- Head====================================================================== -->
-	
+
 	<!-- Head====================================================================== -->
 </head>
 
@@ -18,14 +18,13 @@ include_once('Business/productosBusiness.php');?>
 
 	<!-- Header====================================================================== -->
 	<?php include_once('include/header.php');
-		  
 
 
-					
-		  if(isset($_POST['submitCom'])){ 
-			businessGuardarComentario($_POST);
-			
-		}
+
+
+	if (isset($_POST['submitCom'])) {
+		businessGuardarComentario($_POST);
+	}
 
 
 	?>
@@ -36,16 +35,16 @@ include_once('Business/productosBusiness.php');?>
 			<div class="row">
 				<!-- Sidebar ================================================== -->
 				<?php include_once('include/sidebar.php');
-				
-			//	$producto = businessObtenerProducto($_GET['producto']);	//GUARDO EL ARRAY QUE ME TRAIGO DE producto.php
 
-				$arrayProductos = json_decode(file_get_contents(DIR_BASE.'datos/productos.json'),TRUE);
+				//	$producto = businessObtenerProducto($_GET['producto']);	//GUARDO EL ARRAY QUE ME TRAIGO DE producto.php
+
+				$arrayProductos = json_decode(file_get_contents(DIR_BASE . 'datos/productos.json'), TRUE);
 				//echo "<script>console.log('" . json_encode($arrayProductos) . "');</script>";
 				//$jsonProductos = file_get_contents(DIR_BASE.'datos/productos.json');	
 				$producto = $arrayProductos[$_GET['producto']];
-				 ?>
+				?>
 				<!-- Sidebar end=============================================== -->
-			<!--	
+				<!--	
 			//	$producto = json_decode(file_get_contents(DIR_BASE.'datos/productos.json'), TRUE); // TRAIGO EL ARRAY DE PRODUCTO
 				
 				
@@ -60,33 +59,34 @@ include_once('Business/productosBusiness.php');?>
 					</ul>
 					<div class="row">
 						<div id="gallery" class="span3">
-							<a href="themes/images/products/<?php echo $producto['imagenL'] ?>" title="Fujifilm FinePix S2950 Digital Camera">
-								<img src="themes/images/products/<?php echo $producto['imagenL'] ?>" style="width:100%" alt="Fujifilm FinePix S2950 Digital Camera" />
+							<a href="<?php echo str_replace('small', 'xl', $img) ?>" title="Fujifilm FinePix S2950 Digital Camera">
+								
 							</a>
 							<div id="differentview" class="moreOptopm carousel slide">
 								<div class="carousel-inner">
-									
-									<?php $imagenes = businessObtenerImagenesProducto($producto['id']) ; 
-					if(!empty($imagenes)){
-						$active = 'active';
-						foreach($imagenes as $img){?>
-							<div class="item <?php echo $active; $active = '';?>">
-								<img src="<?php echo str_replace('small','xl',$img)?>" alt="">
-							</div>
-						<?php } ?>
-					<?php }else{ ?>
-						<div class="item active">
-							<img src="<?php echo URL_BASE?>themes/images/products/1l.jpg" alt="">
-						</div>	
-					<?php } ?> 
 
-
-
-									
+									<?php $imagenes = businessObtenerImagenesProducto($producto['id']);
+									if (!empty($imagenes)) {
+										$active = 'active';
+										foreach ($imagenes as $img) { ?>
+											<div class="item <?php echo $active;
+																$active = ''; ?>">
+												<img src="<?php echo str_replace('small', 'big', $img) ?>" alt="">
+											</div>
+										<?php } ?>
+									<?php } else { ?>
 										<div class="item active">
-											<a href="themes/images/products/<?php echo $producto['imagenS1'] ?>"> <img style="width:29%" src="themes/images/products/<?php echo $producto['imagenS1'] ?>" alt="" /></a>
-										<a href="themes/images/products/<?php echo $producto['imagenS2'] ?>"> <img style="width:29%" src="themes/images/products/<?php echo $producto['imagenS2'] ?>" alt="" /></a>
-										<a href="themes/images/products/<?php echo $producto['imagenS3'] ?>"> <img style="width:29%" src="themes/images/products/<?php echo $producto['imagenS3'] ?>" alt="" /></a>
+											<img src="<?php echo str_replace('small', 'big', $img) ?>" alt="">
+										</div>
+									<?php } ?>
+
+
+
+
+									<div class="item active">
+										<a href="<?php echo str_replace('small', 'xl', $img) ?>"> <img style="width:29%" src="<?php echo str_replace('small','xl',$img)?>" alt="" /></a>
+										<a href="<?php echo str_replace('small', 'xl', $img) ?>"> <img style="width:29%" src="<?php echo str_replace('small','xl',$img)?>" alt="" /></a>
+										<a href="<?php echo str_replace('small', 'xl', $img) ?>"> <img style="width:29%" src="<?php echo str_replace('small','xl',$img)?>" alt="" /></a>
 									</div>
 								</div>
 							</div>
@@ -124,35 +124,35 @@ include_once('Business/productosBusiness.php');?>
 							<hr class="soft" />
 						</div>
 						<form name="comentario" method="POST" action="" enctype="">
-					Nombre: <input name="nombre" type="text" ><br>
-					Email: <input name="email" type="text" ><br>
-					Comentarios:<br>
-					<textarea name="comentario"></textarea><br>
-					<input type="submit" name="submitCom" value="Enviar">
-					<input type="hidden" name="producto" value="<?php echo $producto['id']?>"   ><br>
-				</form>
+							Nombre: <input name="nombre" type="text"><br>
+							Email: <input name="email" type="text"><br>
+							Comentarios:<br>
+							<textarea name="comentario"></textarea><br>
+							<input type="submit" name="submitCom" value="Enviar">
+							<input type="hidden" name="producto" value="<?php echo $producto['id'] ?>"><br>
+						</form>
 
-				<?php 
+						<?php
 						$comentario =  businessObtenerComentarios();
 						krsort($comentario);
 
-						foreach( $comentario as $c){
-							if($producto['id'] == $c['producto']){
-								echo $c['nombre'].':'.$c['comentario'].'<br />';
+						foreach ($comentario as $c) {
+							if ($producto['id'] == $c['producto']) {
+								echo $c['nombre'] . ':' . $c['comentario'] . '<br />';
 							}
 						}
 
-				?>
-			
+						?>
 
 
-				</div>
+
 					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	
+
 
 	<!-- MainBody End ============================= -->
 	<!-- footer&scr====================================================================== -->

@@ -15,261 +15,18 @@ $seccion = 'home';
 
 <body>
 	<!-- Header====================================================================== -->
-	<?php include_once('include/header.php'); ?>
-	
+	<?php include_once('include/header.php'); ?>	
 	<?php include_once('helpers/string.php'); ?>
+	<?php include_once('helpers/image.php'); ?>
 	<!-- Header end================================================================== -->
 
-	<!--<div id="carouselBlk">
-		<div id="myCarousel" class="carousel slide">
-			<div class="carousel-inner">
-				<div class="item active">
-					<div class="container">
-						<a href="register.php"><img style="width:100%" src="themes/images/carousel/1.png" alt="special offers" /></a>
-						<div class="carousel-caption">
-							<h4>Second Thumbnail label</h4>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="container">
-						<a href="register.php"><img style="width:100%" src="themes/images/carousel/2.png" alt="" /></a>
-						<div class="carousel-caption">
-							<h4>Second Thumbnail label</h4>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="container">
-						<a href="register.php"><img src="themes/images/carousel/3.png" alt="" /></a>
-						<div class="carousel-caption">
-							<h4>Second Thumbnail label</h4>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-						</div>
-
-					</div>
-				</div>
-				<div class="item">
-					<div class="container">
-						<a href="register.php"><img src="themes/images/carousel/4.png" alt="" /></a>
-						<div class="carousel-caption">
-							<h4>Second Thumbnail label</h4>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-						</div>
-
-					</div>
-				</div>
-				<div class="item">
-					<div class="container">
-						<a href="register.php"><img src="themes/images/carousel/5.png" alt="" /></a>
-						<div class="carousel-caption">
-							<h4>Second Thumbnail label</h4>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="container">
-						<a href="register.php"><img src="themes/images/carousel/6.png" alt="" /></a>
-						<div class="carousel-caption">
-							<h4>Second Thumbnail label</h4>
-							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-		</div>
-	</div> -->
 	<div id="mainBody">
 		<div class="container">
 			<div class="row">
 				<!-- Sidebar ================================================== -->
 				<?php include_once('include/sidebar.php'); ?>
 				<!-- Sidebar end=============================================== -->
-			<!-- 	<div class="span9">
-					<div class="well well-small">
-						<h4>Featured Products <small class="pull-right">200+ featured products</small></h4>
-						<div class="row-fluid">
-							<div id="featured" class="carousel slide">
-								<div class="carousel-inner">
-									<div class="item active">
-										<ul class="thumbnails">
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/1L.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/1s1.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/1s2.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/1s3.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="item">
-										<ul class="thumbnails">
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/5.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<i class="tag"></i>
-													<a href="product_details.php"><img src="themes/images/products/6.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/7.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/8.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="item">
-										<ul class="thumbnails">
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/9.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/10.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/11.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/12.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="item">
-										<ul class="thumbnails">
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/2.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/3.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/4.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-											<li class="span3">
-												<div class="thumbnail">
-													<a href="product_details.php"><img src="themes/images/products/5.jpg" alt=""></a>
-													<div class="caption">
-														<h5>Product name</h5>
-														<h4><a class="btn" href="product_details.php">VIEW</a> <span class="pull-right">$222.00</span></h4>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
-								<a class="right carousel-control" href="#featured" data-slide="next">›</a>
-							</div>
-						</div>
-					</div>
-					<h4>Latest Products </h4>
-					<ul class="thumbnails">-->
+
 						<!-- ============================= inicio codigo a iterar-->
 						<?php
 
@@ -283,7 +40,12 @@ $seccion = 'home';
 						?>
 							<li class="span3">
 								<div class="thumbnail">
-									<a href="product_details.php?producto=<?php echo $producto['id']?>"><img src="themes/images/products/<?php echo $producto['imagenS1']?>" alt="" /></a>
+									<?php $img = obtener_imagenes('themes/images/products/'.$producto['id'].'/'); 
+										//var_dump($img);
+										//echo('themes/images/products/'.$producto['id']);
+										//die();
+										 ?>
+									<a href="product_details.php?producto=<?php echo $producto['id']?>"><img src="<?php echo str_replace('small','big',$img[0])?>" alt="" /></a>
 									<div class="caption">
 										<h5><?php echo $producto['nombre']?></h5>
 										<p><?php echo cortar_palabras($producto['descripcion'],100) ?></p>

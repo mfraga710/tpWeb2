@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,8 +14,7 @@
     <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
 </head>
 <?php
-include_once('../config/config.php');
-//include_once('config/config.php');
+include_once('config/config.php');
 include_once(DIR_BASE . 'helpers/urls.php');
 include_once(DIR_BASE . 'helpers/image.php');
 include_once(DIR_BASE . 'Business/productosBusiness.php');
@@ -83,44 +84,48 @@ if (isset($_GET['del'])) {
             <!-- ============================================================== -->
             <!-- hoverable table -->
             <!-- ============================================================== -->
+
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Productos<a href="productosForm.php"><i class="fas fa-plus"></i></a></h5>
+                    <h5 class="card-header text-center">Productos</h5>
+                    <a href="productosForm.php?edit=" class="btn btn-primary btn-block">Agregar Producto</a>
                     <div class="card-body">
-                        <table class="table table-hover">
+                        <table class="table table-hover text-center">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Nombre</th>
-                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Categoría</th>
                                     <th scope="col">Marca</th>
-                                    <th scope="col">Precio</th>
+                                    <th scope="col">Precio($)</th>
                                     <th scope="col">Activo</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach(businessObtenerProductos() as $prod){?>
-                                <tr>
-                                    <td><?php echo $prod['id']?></td>
-                                    <td><?php echo $prod['nombre']?></td>
-                                    <td><?php echo $categorias[$prod['categoria']]['nombre']?></td>
-                                    <td><?php echo $marcas[$prod['marca']]['nombre']?></td>
-                                    <td><?php echo $prod['precio']?></td>
-                                    <td><?php echo $prod['activa']?'SI':'NO'?></td>
-                                    <td>
-                                        <a href="productosForm.php?edit=<?php echo $prod['id']?>"><i class="far fa-edit"></i></a>
-                                        <a href="productosListado.php?del=<?php echo $prod['id']?>"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                                <?php foreach (businessObtenerProductos() as $prod) { ?>
+                                    <tr>
+                                        <td><?php echo $prod['id'] ?></td>
+                                        <td><?php echo $prod['nombre'] ?></td>
+                                        <td><?php echo $categorias[$prod['categoria']]['nombre'] ?></td>
+                                        <td><?php echo $marcas[$prod['marca']]['nombre'] ?></td>
+                                        <td><?php echo $prod['precio'] ?></td>
+                                        <td><?php echo $prod['activa'] ? 'SI' : 'NO' ?></td>
+                                        <td>
+                                            <a href="productosForm.php?edit=<?php echo $prod['id'] ?>"> <i class="btn btn-primary">Agregar</i></a>
+                                            <a href="productosListado.php?del=<?php echo $prod['id'] ?>"><i class="btn btn-danger">Borrar</i></a>
+                                        </td>
+                                    </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+
             <!-- ============================================================== -->
             <!-- end hoverable table -->
+            <!-- ============================================================== -->
             <!-- ============================================================== -->
 
 

@@ -8,10 +8,10 @@ include_once(DIR_BASE.'helpers/image.php');
 function businessGuardarProducto($datos = array()){
 
     $id = daoGuardarProducto($datos);
-    if(!empty($_FILES['imagen'])){
-        saveImage($_FILES['imagen'], $id);
+    if(!empty($_FILES['imagenL'])){
+        saveImage($_FILES['imagenL'], $id);
     } 
-
+    //var_dump($_FILES);die();
 
 }
 
@@ -31,10 +31,11 @@ function businessModificarProducto($datos ,$id){
         $datos['imagen'] = $_FILES['imagen']['name'];
     }*/
     daoModificarProducto($datos,$id); 
-    if(!empty($_FILES['imagen'])){
-        saveImage($_FILES['imagen'], $id);
+    if(!empty($_FILES['imagenL'])){
+        saveImage($_FILES['imagenL'], $id);
     } 
 
+    
 //die();   
 }
 
@@ -44,7 +45,7 @@ function saveImage($datos,$id){
             mkdir($ruta);
         }
         //var_dump($datos);
-        $tamanhos = array(0 => array('nombre'=>'big','ancho'=>'100','alto'=>'200'),
+        $tamanhos = array(0 => array('nombre'=>'big','ancho'=>'160','alto'=>'160'),
                           1 => array('nombre'=>'small','ancho'=>'50','alto'=>'100'),
                            2 => array('nombre'=>'xl','ancho'=>'500','alto'=>'1000'));
         if(is_array($datos['name'])){

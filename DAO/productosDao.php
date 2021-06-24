@@ -2,6 +2,7 @@
 
 function daoGuardarProducto($datos = array()){
      $productos = daoObtenerProductos();
+     //var_dump($productos);die();
      $id = date('Ymdhisu');
      $productos[$id] = array(
         'id' => $id,
@@ -10,10 +11,9 @@ function daoGuardarProducto($datos = array()){
         'categoria' => $datos['categoria'],
         'marca' => $datos['marca'],
         'activa' => isset($datos['activa'])?'TRUE':'FALSE',
-        'descripcion' => $datos['descripcion'],
-        'imagen' => $datos['imagen']
-       
+        'descripcion' => $datos['descripcion']
     ); 
+ 
     file_put_contents(DIR_BASE.'datos/productos.json',json_encode($productos));
     return $id;
 
@@ -45,9 +45,7 @@ function daoModificarProducto($datos, $id){
        'categoria' => $datos['categoria'],
        'marca' => $datos['marca'],
        'activa' => isset($datos['activa'])?'TRUE':'FALSE',
-       'descripcion' => $datos['descripcion']
-      
-      
+       'descripcion' => $datos['descripcion']       
    ); 
    file_put_contents(DIR_BASE.'datos/productos.json',json_encode($productos));
 }

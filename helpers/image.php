@@ -42,9 +42,10 @@ function redimensionar($ruta,$file_name,$file_temp,$posicion,$tamanhos){
 		list($width,$height)=getimagesize($uploadedfile);
 		foreach($tamanhos as $tam){
 			$newwidth = $tam['ancho'];
-			$newheight=($height/$width)*$newwidth;
+			$newheight = $tam['alto'];
+			//$newheight=($height/$width)*$newwidth;
 			
-			if($newheight > $tam['alto']){
+			/*if($newheight > $tam['alto']){
 				$newheight = $tam['alto'];
 				$newwidth=($width/$height)*$newheight;
 				if($newwidth > $tam['ancho']){
@@ -52,7 +53,7 @@ function redimensionar($ruta,$file_name,$file_temp,$posicion,$tamanhos){
 					$nwidth = $newwidth;
 					$newheight=($nheight/$nwidth)*$tam['ancho'];
 				}
-			}
+			}*/
 			$tmp=imagecreatetruecolor($newwidth,$newheight);
 			if($extension == "png"){
 				$gris = imagecolorallocate($tmp, 234, 234, 234);

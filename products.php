@@ -3,6 +3,7 @@
 
 <?php
 include_once('config/config.php');
+
 ?>
 
 <head>
@@ -17,6 +18,7 @@ include_once('config/config.php');
 	<?php 
 		include_once(DIR_BASE . '/include/header.php') ;
 		include_once(DIR_BASE . '/helpers/string.php');
+		include_once(DIR_BASE . '/helpers/image.php');
 	?>
 	<!-- Header end====================================================================== -->
 
@@ -88,7 +90,13 @@ include_once('config/config.php');
 							?>
 								<div class="row">
 									<div class="span2">
-										<img src="themes/images/products/<?php echo $producto['imagenS1']?>" alt="" />
+										<?php $img = obtener_imagenes('themes/images/products/'.$producto['id'].'/'); 
+										//var_dump($img);
+										//echo('themes/images/products/'.$producto['id']);
+										//die();
+										 ?>
+										<img src="<?php echo str_replace('small','big',$img[0])?>" alt="" />
+
 									</div>
 									<div class="span4">
 										<h3>New | Available</h3>
