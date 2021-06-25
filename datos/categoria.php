@@ -3,7 +3,7 @@ $categorias = array (
     '1'=> array(
         'id'=> 1,
         'nombre'=>'Camaras',
-        'activa'=> FALSE
+        'activa'=> TRUE
 
     ),
     '2'=> array(
