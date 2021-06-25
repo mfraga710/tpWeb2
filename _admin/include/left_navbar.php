@@ -15,7 +15,7 @@
                                 <div id="submenu-1" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="marcas.php">Marcas</a>                                        
+                                            <a class="nav-link" href="marcasListado.php">Marcas</a>                                        
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="productosListado.php">Productos</a>
