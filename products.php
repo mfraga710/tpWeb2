@@ -27,18 +27,7 @@ include_once('config/config.php');
 			<div class="row">
 				<!-- Sidebar ================================================== -->
 				<?php include_once(DIR_BASE . '/include/sidebar.php');
-				//include_once('Business/productosBusiness.php');
-			//	include_once('Business/categoriasBusiness.php');
-			//	include_once('Business/marcasBusiness.php');
 				
-			//	$marcas = businessObtenerMarcas();
-	//$categorias = businessObtenerCategorias();
-
-
-		//if(isset($_GET['del'])){
-   			//	 businessBorrarProducto($_GET['del']);
-    			//	redirect('productosListado.php');
-			//	}
 				?>
 				<!-- Sidebar end=============================================== -->
 				<div class="span9">
@@ -74,9 +63,7 @@ include_once('config/config.php');
 							<?php
 
 							$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // RUTA ABSOLUTA
-							//$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
-							//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
-							//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
+							
 
 							foreach ($arrayProductos as $producto) {
 								$print = true;
@@ -91,9 +78,7 @@ include_once('config/config.php');
 								<div class="row">
 									<div class="span2">
 										<?php $img = obtener_imagenes('themes/images/products/'.$producto['id'].'/'); 
-										//var_dump($img);
-										//echo('themes/images/products/'.$producto['id']);
-										//die();
+										
 										 ?>
 										<img src="<?php echo str_replace('small','big',$img[0])?>" alt="" />
 
@@ -133,9 +118,7 @@ include_once('config/config.php');
 
 									$arrayProductos = json_decode(file_get_contents(DIR_BASE . '/datos/productos.json'), TRUE); // RUTA ABSOLUTA
 								
-									//	$productos = file_get_contents('datos/productos.json'); // RUTA RELATIVA
-								//$productos = file_get_contents(URL_BASE.'datos/productos.json'); (se puede hacer con DIR_BASE O URL_BASE, es lo mismo)
-									//var_dump($productos);die(); >>>>> (NOS MUESTRA EL CONTENIDO DEL JSON - FALTA CONFIG PARA QUE MUESTRE LOS ERRORES PHP)
+									
 
 									foreach ($arrayProductos as $producto) {
 
@@ -157,7 +140,7 @@ include_once('config/config.php');
 						</div>
 
 
-					<!--	<a href="compair.php" class="btn btn-large pull-right">Compair Product</a>-->
+					
 						<div class="pagination">
 							<ul>
 								<li><a href="#">&lsaquo;</a></li>

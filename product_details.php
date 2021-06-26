@@ -36,20 +36,13 @@ include_once('Business/productosBusiness.php'); ?>
 				<!-- Sidebar ================================================== -->
 				<?php include_once('include/sidebar.php');
 
-				//	$producto = businessObtenerProducto($_GET['producto']);	//GUARDO EL ARRAY QUE ME TRAIGO DE producto.php
+			
 
 				$arrayProductos = json_decode(file_get_contents(DIR_BASE . 'datos/productos.json'), TRUE);
-				//echo "<script>console.log('" . json_encode($arrayProductos) . "');</script>";
-				//$jsonProductos = file_get_contents(DIR_BASE.'datos/productos.json');	
+					
 				$producto = $arrayProductos[$_GET['producto']];
 				?>
-				<!-- Sidebar end=============================================== -->
-				<!--	
-			//	$producto = json_decode(file_get_contents(DIR_BASE.'datos/productos.json'), TRUE); // TRAIGO EL ARRAY DE PRODUCTO
 				
-				
-				//var_dump($producto);
-			//	-->
 
 				<div class="span9">
 					<ul class="breadcrumb">
