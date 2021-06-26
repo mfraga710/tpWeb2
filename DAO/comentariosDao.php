@@ -2,8 +2,9 @@
 
 function daoGuardarComentario($datos = array()){
     $comentarios = daoObtenerComentarios(); 
-    
-    $comentarios[date('Ymdhisu')] = array(
+    $id = date('Ymdhisu');
+    $comentarios[$id] = array(
+        'id' => $id,
         'nombre' => $datos['nombre'],
         'comentario' => $datos['comentario'],
         'email' => $datos['email'],

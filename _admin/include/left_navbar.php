@@ -24,7 +24,7 @@
                                             <a class="nav-link" href="categoriasListado.php">Categorias</a>
                                         </li>                                        
                                         <li class="nav-item">
-                                            <a class="nav-link" href="comentarios.php">Comentarios</a>
+                                            <a class="nav-link" href="comentariosListado.php">Comentarios</a>
                                         </li>                                        
                                     </ul>
                                 </div>
