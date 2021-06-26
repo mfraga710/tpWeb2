@@ -7,18 +7,4 @@ $mail_smtp_user = 'test@flaviogarrido.com';
 $mail_smtp_pass = 't53kwnExZ8w';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

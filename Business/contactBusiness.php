@@ -12,12 +12,12 @@ function sendMail($data){
 
     $message = (new Swift_Message('Contacto desde el carrito'))
     ->setFrom([$data['email'] =>$data['name']])
-    ->setTo([$GLOBALS['mail_smtp_user'] => 'Formulario de contacto de carrito'])
+    ->setTo(['paula.lezcano01@davinci.edu.ar' => 'Formulario de contacto de carrito'])
     ->setBody(processMailBody($data))
     ->setContentType("text/html");
 
-    var_dump($message);
-   // return $mailer->send($message);
+   
+   return $mailer->send($message);
 }
 
     function processMailBody($data){
@@ -28,6 +28,8 @@ function sendMail($data){
     }
     return $body;
 }
+
+?>
 
 
 

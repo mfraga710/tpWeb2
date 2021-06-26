@@ -71,11 +71,6 @@
 
 							</div>
 							<div class="control-group">
-
-								<input type="text" name ="message" placeholder="message" class="input-xlarge" />
-
-							</div>
-							<div class="control-group">
 								<textarea rows="3" id="textarea"  name= "message" class="input-xlarge"></textarea>
 
 							</div>
