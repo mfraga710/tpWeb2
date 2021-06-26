@@ -1,4 +1,13 @@
 {
+    
+    "name":"plezcano/tpweb2",
+    "authors": [
+        {
+            "name": "Paula Lezcano",
+            "email": "paula.lezcano01@davinci.edu.ar"
+        }
+    ],
+
     "require": {
         "swiftmailer/swiftmailer": "^6.2"
     }
