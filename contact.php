@@ -14,7 +14,15 @@
 <body>
 
 	<!-- Header====================================================================== -->
-	<?php include_once (DIR_BASE. 'include/header.php');?>
+	<?php include_once (DIR_BASE. 'include/header.php');
+	include_once (DIR_BASE. 'Business/contactBusiness.php');
+
+	if(!empty($_POST['email'])){
+		sendMail($_POST);
+
+
+	}
+	?>
 	<!-- Header end====================================================================== -->	
 
 	<div id="mainBody">
@@ -45,25 +53,30 @@
 				</div>
 				<div class="span4">
 					<h4>Email Us</h4>
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="" method="post">
 						<fieldset>
 							<div class="control-group">
 
-								<input type="text" placeholder="name" class="input-xlarge" />
+								<input type="text" name ="name" placeholder="name" class="input-xlarge" />
 
 							</div>
 							<div class="control-group">
 
-								<input type="text" placeholder="email" class="input-xlarge" />
+								<input type="text" name ="tel" placeholder="teléfono" class="input-xlarge" />
 
 							</div>
 							<div class="control-group">
 
-								<input type="text" placeholder="subject" class="input-xlarge" />
+								<input type="text" name ="email" placeholder="email" class="input-xlarge" />
 
 							</div>
 							<div class="control-group">
-								<textarea rows="3" id="textarea" class="input-xlarge"></textarea>
+
+								<input type="text" name ="message" placeholder="message" class="input-xlarge" />
+
+							</div>
+							<div class="control-group">
+								<textarea rows="3" id="textarea"  name= "message" class="input-xlarge"></textarea>
 
 							</div>
 
