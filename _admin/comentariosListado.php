@@ -96,7 +96,12 @@ if (isset($_GET['del'])) {
                             </thead>
                             <tbody>
                                 <?php foreach($comentarios as $com){
-                                    //var_dump($comentarios);die();?>                                
+                                $print = true;
+                                if (!empty($_GET['producto']) and $print) {
+                                    if ($com['producto'] != $_GET['producto']) $print = FALSE;
+                                }
+                                if ($print) {
+                                ?>                               
                                 <tr>
                                     <td><?php echo $com['id']?></td>
                                     <td><?php echo $com['nombre']?></td>
@@ -107,7 +112,8 @@ if (isset($_GET['del'])) {
                                         <a href="comentariosListado.php?del=<?php echo $com['id']?>"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
-                                <?php } ?>                                
+                                <?php }
+							} ?>                               
                             </tbody>
                         </table>
                     </div>

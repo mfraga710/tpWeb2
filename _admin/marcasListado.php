@@ -96,7 +96,13 @@ if (isset($_GET['del'])) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($marcas as $mar){?>
+                                <?php foreach($marcas as $mar){
+                                    $print = true;
+                                    if (!empty($_GET['marca']) and $print) {
+                                        if ($mar['id'] != $_GET['marca']) $print = FALSE;
+                                    }
+                                    if ($print) {
+                                    ?>  
                                 <tr>
                                     <td><?php echo $mar['id']?></td>
                                     <td><?php echo $mar['nombre']?></td>
@@ -106,7 +112,8 @@ if (isset($_GET['del'])) {
                                         <a href="marcasListado.php?del=<?php echo $mar['id']?>"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
-                                <?php } ?>
+                                <?php }
+							} ?>
                             </tbody>
                         </table>
                     </div>

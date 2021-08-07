@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -100,20 +101,30 @@ if (isset($_GET['del'])) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach(businessObtenerProductos() as $prod){?>
-                                <tr>
-                                    <td><?php echo $prod['id']?></td>
-                                    <td><?php echo $prod['nombre']?></td>
-                                    <td><?php echo $categorias[$prod['categoria']]['nombre']?></td>
-                                    <td><?php echo $marcas[$prod['marca']]['nombre']?></td>
-                                    <td><?php echo $prod['precio']?></td>
-                                    <td><?php echo $prod['activa']?'SI':'NO'?></td>
-                                    <td>
-                                        <a href="productosForm.php?edit=<?php echo $prod['id']?>"><i class="far fa-edit"></i></a>
-                                        <a href="productosListado.php?del=<?php echo $prod['id']?>"><i class="fas fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <?php } ?>
+                                <?php foreach (businessObtenerProductos() as $prod) {
+                                    $print = true;
+                                    if (!empty($_GET['categoria']) and $print) {
+                                        if ($prod['categoria'] != $_GET['categoria']) $print = FALSE;
+                                    }
+                                    if (!empty($_GET['marca']) and $print) {
+                                        if ($prod['marca'] != $_GET['marca']) $print = FALSE;
+                                    }
+                                    if ($print) {
+                                ?>
+                                        <tr>
+                                            <td><?php echo $prod['id'] ?></td>
+                                            <td><?php echo $prod['nombre'] ?></td>
+                                            <td><?php echo $categorias[$prod['categoria']]['nombre'] ?></td>
+                                            <td><?php echo $marcas[$prod['marca']]['nombre'] ?></td>
+                                            <td><?php echo $prod['precio'] ?></td>
+                                            <td><?php echo $prod['activa'] ? 'SI' : 'NO' ?></td>
+                                            <td>
+                                                <a href="productosForm.php?edit=<?php echo $prod['id'] ?>"><i class="far fa-edit"></i></a>
+                                                <a href="productosListado.php?del=<?php echo $prod['id'] ?>"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                <?php }
+                                } ?>
                             </tbody>
                         </table>
                     </div>

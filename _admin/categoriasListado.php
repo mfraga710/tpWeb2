@@ -96,7 +96,14 @@ if (isset($_GET['del'])) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($categorias as $cat){?>                                
+                                <?php foreach($categorias as $cat){
+                                    $print = true;
+                                    if (!empty($_GET['categoria']) and $print) {
+                                        if ($cat['id'] != $_GET['categoria']) $print = FALSE;
+                                    }
+                                    if ($print) {
+                                    ?>  
+
                                 <tr>
                                     <td><?php echo $cat['id']?></td>
                                     <td><?php echo $cat['nombre']?></td>
@@ -106,7 +113,8 @@ if (isset($_GET['del'])) {
                                         <a href="categoriasListado.php?del=<?php echo $cat['id']?>"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
-                                <?php } ?>                                
+                                <?php }
+							} ?>                               
                             </tbody>
                         </table>
                     </div>
